@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'devise', github: "plataformatec/devise"
 gem 'omniauth-facebook'
+#Flexbox rb
+gem 'flexbox_rb'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
