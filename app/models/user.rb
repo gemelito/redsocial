@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
          
+  validates :username, presence: true,uniqueness: true,length: {in: 3..12}
+         
   #Metodo de clase para facebook que necesita de un paramtero
   def self.from_omniauth(auth)
     #Busca al usuario con el mismo provider y uid.
