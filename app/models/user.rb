@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
          
   validates :username, presence: true,uniqueness: true,length: {in: 3..12}
+  #validacion personalizada
+  validate :validate_username_regex
          
   #Metodo de clase para facebook que necesita de un paramtero
   def self.from_omniauth(auth)
@@ -24,5 +26,16 @@ class User < ApplicationRecord
   	end
   	
   end
+  
+   private
+   #creamos la validacion personalizada
+    def validate_username_regex
+      #preguna que si no cumple el username con los caracteres declarados manda mensajes de error
+      unless username =~ /\A[a-zA-Z]*[a-zA-Z][a-zA-Z0-9_]*\z/
+        #Pasamos el username y el mensajes que se quiere mostrar
+        errors.add(:username,"El username debe iniciar con una letra")
+        errors.add(:username,"El username sólo puede contener _,letras y números")
+      end
+    end
   
 end
