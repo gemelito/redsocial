@@ -31,6 +31,8 @@ gem 'devise', github: "plataformatec/devise"
 gem 'omniauth-facebook'
 #Flexbox rb
 gem 'flexbox_rb'
+#Annotate
+gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
