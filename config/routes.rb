@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :posts
   #Decimos que cuando se logen con facebook
   #repondremos con un controllador que se
   #llama onmiauth_callbacks
