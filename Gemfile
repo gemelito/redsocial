@@ -33,7 +33,8 @@ gem 'omniauth-facebook'
 gem 'flexbox_rb'
 #Annotate
 gem 'annotate'
-# Use Capistrano for deployment
+gem 'best_in_place',  '~> 3.0.1'
+# Use Capistrano for dployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
