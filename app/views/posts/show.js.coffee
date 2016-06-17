@@ -1,1 +1,1 @@
-$("#posts").prepend "<%= j render @post %>"
+$("#posts").prepend("<%= j render @post %>")

@@ -29,11 +29,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
          
-  has_many :posts
-         
   validates :username, presence: true,uniqueness: true,length: {in: 3..12}
   #validacion personalizada
   validate :validate_username_regex
+  
+  has_many :posts
          
   #Metodo de clase para facebook que necesita de un paramtero
   def self.from_omniauth(auth)
