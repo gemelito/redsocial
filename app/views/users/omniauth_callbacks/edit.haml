@@ -1,7 +1,7 @@
 =form_tag "/custom_sign_up",method: :post do
 	%ul
-	    /Ejecuta un bloque de codigo para mostrar los errors
-	    /que se almacenan en full_messages cuando existe alguno
+		/ Ejecuta un bloque de codigo para mostrar los errors
+		/ que se almacenan en full_messages cuando existe alguno
 		-@user.errors.full_messages.each do |error|
 			%li= error
 	%div

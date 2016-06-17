@@ -4,6 +4,8 @@ class UsuariosController < ApplicationController
     #Como primero se ejecuta el set_user
     #ya se tiene acceso a la instancia @user en show,update
     before_action :set_user
+    before_action :authenticate_user!,only: [:update]
+	before_action :authenticate_owner!,only: [:update]	
 
     def show
         
@@ -38,4 +40,10 @@ class UsuariosController < ApplicationController
             #en este caso son los siguente  permit(:email,:username:,:name,:last_name,:bio)
             params.require(:user).permit(:email,:username,:name,:last_name,:bio)
         end
+        
+        def authenticate_owner!
+			if current_user != @user
+				redirect_to root_path, notice: "No estás autorizado",status: :unauthorized
+			end
+		end
 end

@@ -33,7 +33,11 @@ gem 'omniauth-facebook'
 gem 'flexbox_rb'
 #Annotate
 gem 'annotate'
-gem 'best_in_place',  '~> 3.0.1'
+#Best in place for better edit forms
+gem "best_in_place", "~> 3.0.1"
+#Papercli para subir archivos
+gem "paperclip", "~> 5.0.0.beta1"
+
 # Use Capistrano for dployment
 # gem 'capistrano-rails', group: :development
 
