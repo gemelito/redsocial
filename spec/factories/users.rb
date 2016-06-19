@@ -34,7 +34,7 @@
 FactoryGirl.define do
  factory :user do
     password "12345678"
-    #pasamos el campo que se llenara de manera dinamica
+    #pasamos el campo que se llenara de manera dinamica "Secuenta de datos"
     sequence(:email){|n| "dummy_#{n}@factory.com" }
     sequence(:username){|n| "username#{n}" }
   end

@@ -39,6 +39,13 @@ gem "best_in_place", "~> 3.0.1"
 gem "paperclip", "~> 5.0.0.beta1"
 #Remotipart to upload files via AJAX
 gem "remotipart",github:"urielhdz/remotipart"
+#AASM para state machines
+gem "aasm"
+#Activemodel serializers xml to work with draper
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+#Draper para nuestros decorators
+gem "draper",github:"audionerd/draper",branch:"rails5"
+
 # Use Capistrano for dployment
 # gem 'capistrano-rails', group: :development
 
