@@ -1,6 +1,14 @@
 class FriendshipsController < ApplicationController
     #ante que entre en la accion primero para a buscar al amigo
-    before_action :find_friend
+    before_action :find_friend, except: [:index]
+    
+    #Para la ruta index la cual muestra todas las solicitudes de amigistas que tiene y las
+    #denegadas y para aceptar o denegar
+    def index
+    	#Variable de clase para gustar a las amistades pendientes
+    	#atravez del metodo pendinf for user del model friendship para un parametro
+    	@pending_friendships = Friendship.pending_for_user(current_user)
+    end
    
     def create
 		friendship = Friendship.new(user: current_user, friend: @friend)

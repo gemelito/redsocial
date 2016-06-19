@@ -20,6 +20,13 @@ class Friendship < ApplicationRecord
               .any?
   end
   
+  #Metodo que resive un parametro que es el usaurio
+  def self.pending_for_user(user)
+    #Cuentra las amistades tentiendes por el estatus de la maquina de estados
+    #del usuario que solicita lista de amistades
+    Friendship.pending.where(friend: user)
+  end
+  
   #Definimos una maquina de estado y pasamos un bloque de status
   aasm column: "status" do
     #Amistad pendiente para la relacion

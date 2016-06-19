@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   resources :usuarios, as: :users,only: [:show,:update]
   
-  resources :friendships, only: [:create,:update]
+  resources :friendships, only: [:create,:update,:index]
   
   #Decimos que cuando se logen con facebook
   #repondremos con un controllador que se
