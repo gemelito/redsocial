@@ -25,7 +25,7 @@ class UsuariosController < ApplicationController
 			end
 		end
     end
-    
+
     private
         #Intancia un objeto de la clase o modelo
         #user y busca por el id
@@ -33,17 +33,18 @@ class UsuariosController < ApplicationController
             @user = User.find(params[:id])
         end
         
+         def authenticate_owner!
+			if current_user != @user
+				redirect_to root_path, notice: "No estás autorizado",status: :unauthorized
+			end
+		end
+        
         #Metodo para decir que solo estos campos
         #pueden es utilizados a la otra de utilizar el metodo update
         def user_params
             #:user es un hash que contiene los valores o parametros que se quieren utilizar
             #en este caso son los siguente  permit(:email,:username:,:name,:last_name,:bio)
-            params.require(:user).permit(:email,:username,:name,:last_name,:bio)
+            params.require(:user).permit(:email,:username,:name,:lastname,:bio,:avatar,:cover)
         end
         
-        def authenticate_owner!
-			if current_user != @user
-				redirect_to root_path, notice: "No estás autorizado",status: :unauthorized
-			end
-		end
 end

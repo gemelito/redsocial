@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 4015488b90eb0ad7c87360b29908986d82966f28
+  revision: ac702843ddaa5652fde7a0050ff2378e7368149e
   specs:
     devise (4.1.0)
       bcrypt (~> 3.0)
@@ -8,6 +8,12 @@ GIT
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+
+GIT
+  remote: git://github.com/urielhdz/remotipart.git
+  revision: aa0386690bd224e05b4d05a1f268db28fb11a5a3
+  specs:
+    remotipart (1.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -244,7 +250,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.2.0)
+    web-console (3.3.0)
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
@@ -271,6 +277,7 @@ DEPENDENCIES
   paperclip (~> 5.0.0.beta1)
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)
+  remotipart!
   rspec-rails (~> 3.5.0.beta1)
   sass-rails (~> 5.0)
   shoulda-matchers

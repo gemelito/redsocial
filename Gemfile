@@ -37,7 +37,8 @@ gem 'annotate'
 gem "best_in_place", "~> 3.0.1"
 #Papercli para subir archivos
 gem "paperclip", "~> 5.0.0.beta1"
-
+#Remotipart to upload files via AJAX
+gem "remotipart",github:"urielhdz/remotipart"
 # Use Capistrano for dployment
 # gem 'capistrano-rails', group: :development
 
