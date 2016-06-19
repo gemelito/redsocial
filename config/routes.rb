@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :usuarios, as: :users,only: [:show,:update]
   
   resources :usuarios, as: :users,only: [:show,:update]
+  
+  resources :friendships, only: [:create,:update]
+  
   #Decimos que cuando se logen con facebook
   #repondremos con un controllador que se
   #llama onmiauth_callbacks
