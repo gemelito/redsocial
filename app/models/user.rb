@@ -43,6 +43,13 @@ class User < ApplicationRecord
   
   #Relacion de muchos
   has_many :posts
+  has_many :friendships
+  #Joion Relacion de amigos en donde ellos me agregaron
+  has_many :followers,class_name: "Friendship",foreign_key: "friend_id"
+
+  #donde yo agregue
+  has_many :friends_added, through: :friendships, source: :friend
+  has_many :friends_who_added,through: :friendships, source: :use
   
   #Configuracion de papeclir decrala el campo de la tabla que se quiere resivir y con algunos estilos
   #y una url por defecto
@@ -52,6 +59,17 @@ class User < ApplicationRecord
 
   has_attached_file :cover,styles: {thumb: "400x300",medium:"800x600"},default_url:"/images/:style/missing_cover.jpg" 
   validates_attachment_content_type :cover,content_type: /\Aimage\/.*\Z/
+  
+  def friend_ids
+    # [12,123,12,3123] => friend_id 
+    #Yo soy el user => friend_id
+    Friendship.active.where(user:self).pluck(:friend_id)
+  end
+
+  def user_ids
+    #Yo soy el friend => user_id
+    Friendship.active.where(friend:self).pluck(:user_id)
+  end
          
   #Metodo de clase para facebook que necesita de un paramtero
   def self.from_omniauth(auth)
