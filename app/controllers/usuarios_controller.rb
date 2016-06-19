@@ -8,7 +8,9 @@ class UsuariosController < ApplicationController
 	before_action :authenticate_owner!,only: [:update]	
 
     def show
-        
+        #Esto dice son amigos el usuario que esta logieado con el usuario que quiere enviar
+        #mensaje de amista. my friend es un metodo de esta en user
+       @are_friends = current_user.my_friend?(@user) 
     end
     
     def update

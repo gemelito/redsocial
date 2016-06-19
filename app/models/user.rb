@@ -72,6 +72,14 @@ class User < ApplicationRecord
   	
   end
   
+  #pregunta si hay un amigo en el metodo Friendship de la misma clase
+  #y tratando de saber si el usuario que esta trabatab de ser el amigo del usuario que esta viendo
+  #es su amigo
+  def my_friend?(friend)
+    #Ver en el modelo friendship
+    Friendship.friends?(self,friend)
+  end
+  
    private
    #creamos la validacion personalizada
     def validate_username_regex
