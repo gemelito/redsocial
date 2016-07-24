@@ -11,3 +11,5 @@
 						=render "posts/form"
 					#posts
 						=render @posts
+						/ metodo de will_paginate que genera las paginas del render posts, es decir un control para ver post ya publicados
+						=will_paginate @pots
