@@ -6,7 +6,7 @@ class MainController < ApplicationController
     #Esta jquery trae todas las publicaciones de los amigos en comun
     #y con un numero de publicaiones. Esta utilizando el metodo del will_pagine
     #params para pasarle el numero de pagina page?=1,2,3,4 y el numero de publicaciones
-    @posts = Post.all_for_user(current_user).nuevos.paginate(page:params[:page],per_page:1)
+    @posts = Post.all_for_user(current_user).nuevos.paginate(page:params[:page],per_page:15)
   end
   
   def unregistered
