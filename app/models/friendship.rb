@@ -1,5 +1,7 @@
 class Friendship < ApplicationRecord
+  include Notificable
   include AASM
+  
   belongs_to :user
   #Pasamos la clase la cual va a mapiar para hacer referencia con el mismo usuario
   #ya que el friend es un usuario
