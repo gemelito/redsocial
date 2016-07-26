@@ -26,6 +26,11 @@ class Post < ApplicationRecord
 				.or( Post.where(user_id: user.user_ids))
 	end
 
+	def user_ids
+		#Devolvemos los id de los amigos del usuarios
+		self.user.friend_ids + self.user.user_ids
+	end
+
 	private
 		#Metodo que incluye la libreria del actioncable y se conecta
 		#al canal demo y la cual es el encargado de mandar a todos los conectados

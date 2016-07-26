@@ -1,7 +1,7 @@
 class Friendship < ApplicationRecord
   include Notificable
   include AASM
-  
+
   belongs_to :user
   #Pasamos la clase la cual va a mapiar para hacer referencia con el mismo usuario
   #ya que el friend es un usuario
@@ -22,6 +22,9 @@ class Friendship < ApplicationRecord
               .any?
   end
   
+  def user_ids
+    
+  end
   #Metodo que resive un parametro que es el usaurio
   def self.pending_for_user(user)
     #Cuentra las amistades tentiendes por el estatus de la maquina de estados
