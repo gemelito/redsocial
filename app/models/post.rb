@@ -32,10 +32,13 @@ class Post < ApplicationRecord
 		def send_to_action_cable
 			data = {message: to_html,action:"new_post"}
 			self.user.friend_ids.each do |friend_id|
-				ActionCable.server.broadcast "demo", data
+				#"posts_#{friend_id}" hace el broacating a todos los amigos del usuarios
+				#quien realiza la publicacion
+				ActionCable.server.broadcast "posts_#{friend_id}", data
 			end
 
 			self.user.user_ids.each do |friend_id|
+				ActionCable.server.broadcast "posts_#{friend_id}", data
 			end
 			
 		end
