@@ -7,10 +7,10 @@ class PostChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
-  # Metodo de ejemplo se hace el streaming a la conecion que se dara
-  # en este caso stream_from "demo" hace la conecion a todos que estan
-  # Conectados con el metodo broacast del servidor
+
   def echo(data)
-  	ActionCable.server.broadcast "demo", data
+    # Metodo de ejemplo se hace el streaming a la conecion que se dara
+    # en este caso stream_from "demo" hace la conecion a t
+  	ActionCable.server.broadcast "demo", {servidor: "Holaaa"}
   end
 end
