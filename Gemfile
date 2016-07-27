@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'sidekiq'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -30,7 +30,7 @@ gem 'haml-rails'
 gem 'devise', github: "plataformatec/devise"
 gem 'omniauth-facebook'
 #Flexbox rb
-gem 'flexbox_rb'
+gem 'flexbox_rb', github:'urielhdz/flexbox_rb'
 #Annotate
 gem 'annotate'
 #Best in place for better edit forms
@@ -47,6 +47,9 @@ gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem "draper",github:"audionerd/draper",branch:"rails5"
 #Gema para la paginacion de ls publicaciones
 gem 'will_paginate'
+gem 'sinatra', github:'sinatra/sinatra', require: nil
+gem 'rack-protection', github:'sinatra/rack-protection'
+
 # Use Capistrano for dployment
 # gem 'capistrano-rails', group: :development
 

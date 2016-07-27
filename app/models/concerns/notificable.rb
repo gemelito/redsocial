@@ -7,7 +7,7 @@ module Notificable
 	included do
 		#relacion muchos a muchos con relacion pymorphic
 		has_many :notifications, as: :item
-		after_create :send_notification_to_users
+		after_commit :send_notification_to_users
 	end
 
 	def send_notification_to_users
