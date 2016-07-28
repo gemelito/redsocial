@@ -89,6 +89,10 @@ class User < ApplicationRecord
   	end
   	
   end
+
+  def unviewed_notifications_count
+    Notification.for_user(self.id)
+  end
   
   #pregunta si hay un amigo en el metodo Friendship de la misma clase
   #y tratando de saber si el usuario que esta trabatab de ser el amigo del usuario que esta viendo
