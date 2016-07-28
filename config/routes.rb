@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
   
+  get '/notifications', to: "notifications#index"
+
   #Es recomendable guardar las rutas en recurosos
   #Ya que espesifica el crud
   resources :posts

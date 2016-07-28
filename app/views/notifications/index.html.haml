@@ -1,0 +1,7 @@
+%h1 Notificaciones
+/-@notifications.each do |notification|
+/	-if notification.item_type == "Post"
+/		%p Npotificacione de post
+/	-if notificacion.item_type == "Friendship"
+/		%p Amigstad
+=render_notifications @notifications
