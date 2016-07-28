@@ -16,7 +16,9 @@
       <div class="mdl-snackbar__text"></div>
       <button class="mdl-snackbar__action" type="button"></button>
     </div>
-    <p style="<%= 'display:none;' if notice.nil? && alert.nil? %>"><%= notice %><%= alert %></p>
+    <p class="large-padding red white-text text-center no-margin text-center" style="<%= 'display:none;' if notice.nil? && alert.nil? %>">
+      <%= notice %><%= alert %></p>
+      <span style="float:right;" class="close-parent">X</span>
     <div class="mdl-layout mdl-js-layout">
       <%= render "partials/nav" %>
       <main class="mdl-layout__content">

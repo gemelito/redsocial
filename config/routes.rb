@@ -1,8 +1,9 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
   
-  get '/notifications', to: "notifications#index"
-
+  #get '/notifications', to: "notifications#index"
+  #PUT /PATCH "notifications/:id" para actualizar
+  resources :notifications, only: [:index, :update]
   #Es recomendable guardar las rutas en recurosos
   #Ya que espesifica el crud
   resources :posts

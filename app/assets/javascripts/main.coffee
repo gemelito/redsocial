@@ -7,7 +7,20 @@ window.snack = (options)->
 
 window.loading = false
 
+
 $(document).on "page:load page:fetch ready", ()->
+	componentHandler.upgradeDom()
+	$(".close-parent").on "click", (ev)->
+		$(this).parent().slidUp()
+
+	$("#notification").on "click", (ev)->
+		# Si las notificaciones visible, no hagas el preventDefault
+		ev.preventDefault() if $("#notifications").hasClass("active")
+		#cmabiamos el estado
+		$("#notifications").toggleClass("active")
+		#Espera un falso o si tiene la clase active,ex porque no la tenia
+		#si no la tiene, es porque antes si la tenia
+		return $("#notifications").hasClass("active")
 	$(".best_in_place").best_in_place()
 	$(".mdl-layout").scroll ->
 		#Cargamos publicaciones cuando el usuario ya casi llego al
